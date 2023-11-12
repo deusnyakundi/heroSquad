@@ -18,6 +18,5 @@ public class Squad {
         this.squadMembers = new ArrayList<>();
         instances.add(this);
         this.squadId = instances.size();
-
     }
 }
