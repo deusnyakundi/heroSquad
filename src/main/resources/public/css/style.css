@@ -6,3 +6,20 @@
   transition: all 0.2s ease-out;
   font-family: 'Abel', sans-serif;
 }
+
+a{
+  text-decoration: none;
+	color: inherit;
+	display: inline-block;
+}
+
+.btns{
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 5px 20px;
+  font-family: 'Abel', sans-serif;
+  border-radius: 20px;
+  margin-top: 5px;
+
+}
