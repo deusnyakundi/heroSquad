@@ -3,6 +3,7 @@ import ke.co.safaricom.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,13 +16,10 @@ public class App {
     public static void main(String[] args) {
 
         ProcessBuilder process = new ProcessBuilder();
-        Integer port;
+        int port;
 
-        if (process.environment().get("PORT") != null) {
-            port = Integer.parseInt(process.environment().get("PORT"));
-        } else {
-            port = 4567;
-        }
+        if (process.environment().get("PORT") != null) port = Integer.parseInt(process.environment().get("PORT"));
+        else port = 4567;
         port(port);
 
         staticFileLocation("/public");
@@ -40,6 +38,14 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/hero",(req, res) ->{
+            Map<String, Object> model = new HashMap<>();
+            ArrayList<Hero> hero = Hero.getAllInstances();
+            model.put("hero",hero);
+            return new ModelAndView(model, "hero.hbs");
+        }, new HandlebarsTemplateEngine());
+
 
     }
 
