@@ -18,4 +18,23 @@ public class Hero {
         instances.add(this);
         this.id = instances.size();
     }
+    public String getName() {return this.name;}
+
+    public int getAge() {return this.age;}
+    public String getPower() {return this.power;}
+    public String getWeakness() {return this.weakness;}
+    public static ArrayList<Hero> getAllInstances() {return instances;}
+    public static void clearAllHeroes(){instances.clear();}
+    public int getId(){return id;}
+    public static Hero findById(int id) {return instances.get(id-1);}
+
+    public static Hero setUpNewHero(){
+        return new Hero("Arrow",23,"Master Archer","Human");
+    }
+    public static Hero setUpNewHero1(){
+        return new Hero("Aquaman",30,"Night Vision","Land");
+    }
+    public static Hero setUpNewHero2(){
+        return new Hero("Deathstroke",30,"Tactical Genius","Humanity/Emotional");
+    }
 }
