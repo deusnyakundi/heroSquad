@@ -26,7 +26,9 @@ public class App {
 
         Hero.setUpNewHero();
         Hero.setUpNewHero1();
+        Hero.setUpNewHero2();
         Squad.setUpNewSquad();
+        Squad.setUpNewSquad1();
 
 
         get("/", (request, response) -> {
@@ -112,8 +114,6 @@ public class App {
             model.put("newHero",newSquad.getSquadName());
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
-
-
 
 
     }
